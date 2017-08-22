@@ -10,7 +10,7 @@ ModuleVersion = '0.1.0'
 GUID = '1803191a-75c9-4000-b0aa-521ab6cd4ae9'
 
 # Author of this module
-Author = 'Bak, Jin Hyeong <Bak.Jin.Hyeong@gmail.com>'
+Author = 'Bak, Jin Hyeong'
 
 # Copyright statement for this module
 Copyright = '(c) 2017 Bak, Jin Hyeong'
@@ -44,13 +44,13 @@ PrivateData = @{
         Tags = @('cargo', 'rust', 'rust-lang', 'tab', 'tab-completion', 'tab-expansion', 'tabexpansion')
 
         # A URL to the license for this module.
-        LicenseUri = 'https://github.com/Bak-Jin-Hyeong/posh-cargo/blob/master/LICENSE.txt'
+        LicenseUri = 'https://github.com/Bak-Jin-Hyeong/posh-cargo/blob/v0.1.0/LICENSE.txt'
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/Bak-Jin-Hyeong/posh-cargo'
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'https://github.com/Bak-Jin-Hyeong/posh-cargo/blob/master/CHANGELOG.md'
+        ReleaseNotes = 'https://github.com/Bak-Jin-Hyeong/posh-cargo/blob/v0.1.0/CHANGELOG.md'
     }
 
 }
