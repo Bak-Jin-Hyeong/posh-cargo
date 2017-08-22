@@ -10,7 +10,7 @@ ModuleVersion = '0.1.0'
 GUID = '1803191a-75c9-4000-b0aa-521ab6cd4ae9'
 
 # Author of this module
-Author = 'Bak, Jin Hyeong <Bak.Jin.Hyeong@gmail.com>'
+Author = 'Bak, Jin Hyeong'
 
 # Copyright statement for this module
 Copyright = '(c) 2017 Bak, Jin Hyeong'
