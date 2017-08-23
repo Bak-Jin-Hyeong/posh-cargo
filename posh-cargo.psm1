@@ -153,7 +153,7 @@ $opt__fetch = @($opt_common + $opt_mani + $opt_lock)
 
 $opt___nocmd = $opt_common + $opt_version + @('--list', '--explain')
 $opt___commands = @(
-    @('bench', @($opt_common + $opt_pkg + $opt_feat + $opt_mani + $opt_lock + $opt_jobs + $opt_bin_types + $opt_exclude + @('--message-format', '--target', '--lib', '--no-run'))),
+    @('bench', @($opt_common + $opt_pkg + $opt_feat + $opt_mani + $opt_lock + $opt_jobs + $opt_bin_types + $opt_exclude + @('--message-format', '--target', '--lib', '--no-run', '--no-fail-fast'))),
     @('benchcmp', @($opt_help + $opt_color + @('--version', '--include-missing', '--threshold', '--varience', '--improvements', '--regressions'))),
     @('build', @($opt_common + $opt_pkg + $opt_feat + $opt_mani + $opt_lock + $opt_jobs + $opt_bin_types + $opt_exclude + @('--message-format', '--target', '--lib', '--release'))),
     @('check', @($opt_common + $opt_pkg + $opt_feat + $opt_mani + $opt_lock + $opt_jobs + $opt_bin_types + $opt_exclude + @('--message-format', '--target', '--lib', '--release'))),
