@@ -80,6 +80,25 @@ function get_available_target_triples($toolchain) {
     return $targets | Where-Object { $_ -match $pattern } | ForEach-Object { $_ -replace $pattern, '' }
 }
 
+function get_toolchain_path($toolchain) {
+    $rustc_path = ''
+    if ($toolchain) {
+        $rustc_path = $(rustup run $toolchain rustup which rustc)
+    }
+    else {
+        $rustc_path = $(rustup which rustc)
+    }
+    return Resolve-Path ((Split-Path $rustc_path) + '\..')
+}
+
+function get_rustc_errorcode_list($toolchain) {
+    $toolchain_path = (get_toolchain_path $toolchain)
+    $doc_path = Join-Path $toolchain_path 'share\doc\rust\html\error-index.html'
+    Get-Content $doc_path | Where-Object {
+        $_ -match 'error-described error-used\"><h2 id=\"(\S+)\"'
+    } | ForEach-Object { $Matches[1] }
+}
+
 function get_available_toolchains() {
     $toolchain_list = (rustup toolchain list | ForEach-Object{
         $i = $_.IndexOf(' ')
@@ -132,7 +151,7 @@ $opt_exclude = @('--all', '--exclude')
 $opt_version = @('-V', '--version')
 $opt__fetch = @($opt_common + $opt_mani + $opt_lock)
 
-$opt___nocmd = $opt_common + $opt_version + @('--list')
+$opt___nocmd = $opt_common + $opt_version + @('--list', '--explain')
 $opt___commands = @(
     @('bench', @($opt_common + $opt_pkg + $opt_feat + $opt_mani + $opt_lock + $opt_jobs + $opt_bin_types + $opt_exclude + @('--message-format', '--target', '--lib', '--no-run'))),
     @('benchcmp', @($opt_help + $opt_color + @('--version', '--include-missing', '--threshold', '--varience', '--improvements', '--regressions'))),
@@ -361,9 +380,22 @@ function CargoTabExpansion($lastBlock) {
             $completionList += get_available_toolchains | ForEach-Object { '+' + $_ }
         }
 
-        if ($parameters -match "(^|\s+)--color\s+(?<lastToken>\S*)$") {
-            $wordToComplete = $Matches['lastToken']
-            $completionList = $color
+        if ($parameters -match '(^|\s+)(?<lastOption>\-\S+)\s+(?<lastToken>\S*)$') {
+            $lastToken = $Matches['lastToken']
+            $lastOption = $Matches['lastOption']
+            switch -regex ($lastOption) {
+                '^\-\-color$' {
+                    $wordToComplete = $lastToken
+                    $completionList = $color
+                }
+                '^\-\-explain$' {
+                    $wordToComplete = $lastToken
+                    $completionList = (get_rustc_errorcode_list $toolchain)
+                    if (!$completionList) {
+                        $completionList = @('<CODE>')
+                    }
+                }
+            }
         }
     }
 
