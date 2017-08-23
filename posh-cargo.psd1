@@ -16,7 +16,7 @@ Author = 'Bak, Jin Hyeong'
 Copyright = '(c) 2017 Bak, Jin Hyeong'
 
 # Description of the functionality provided by this module
-Description = 'Provides tab autocompletion of cargo (https://https://github.com/rust-lang/cargo)'
+Description = 'Provides tab autocompletion of cargo (https://github.com/rust-lang/cargo)'
 
 # Minimum version of the Windows PowerShell engine required by this module
 PowerShellVersion = '3.0'
