@@ -44,13 +44,13 @@ PrivateData = @{
         Tags = @('cargo', 'rust', 'rust-lang', 'tab', 'tab-completion', 'tab-expansion', 'tabexpansion')
 
         # A URL to the license for this module.
-        LicenseUri = 'https://github.com/Bak-Jin-Hyeong/posh-cargo/blob/master/LICENSE.txt'
+        LicenseUri = 'https://github.com/Bak-Jin-Hyeong/posh-cargo/blob/v0.1.1/LICENSE.txt'
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/Bak-Jin-Hyeong/posh-cargo'
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'https://github.com/Bak-Jin-Hyeong/posh-cargo/blob/master/CHANGELOG.md'
+        ReleaseNotes = 'https://github.com/Bak-Jin-Hyeong/posh-cargo/blob/v0.1.1/CHANGELOG.md'
     }
 
 }
