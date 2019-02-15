@@ -64,7 +64,10 @@ function get_feature_from_manifest() {
 }
 
 function get_cargo_commands() {
-    return (cargo --list 2> $null) | Select-Object -Skip 1 | ForEach-Object { $_.Trim() }
+    return (cargo --list 2> $null) | Select-Object -Skip 1 | ForEach-Object {
+        $_.Trim() -match '^\S+' > $null
+        $Matches[0]
+    }
 }
 
 function get_available_target_triples($toolchain) {
