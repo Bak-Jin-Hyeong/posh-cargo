@@ -222,9 +222,11 @@ function CargoTabExpansion($lastBlock) {
     }
 
     $parsed = (parse_commands $parameters)
-    $command = $parsed[0]
-    $completionList = $parsed[1]
-    $wordToComplete = $parsed[2]
+    if ($parsed.Length -eq 3) {
+        $command = $parsed[0]
+        $completionList = $parsed[1]
+        $wordToComplete = $parsed[2]
+    }
 
     if ($command) {
         $other_command_specific = $false
