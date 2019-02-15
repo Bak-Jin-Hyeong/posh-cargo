@@ -1,5 +1,12 @@
 # posh-cargo Release History
 
+## 0.1.2 - 2019-02-16
+
+- Fixed a problem where completion for built-in subcommands did not work properly. (#1)
+- Fixed an issue where invisible errors accumulate on completion. (#2)
+
+Thanks @GNQG for your contribution.
+
 ## 0.1.1 - 2017-08-23
 
 - Fix typos of '--tests' option

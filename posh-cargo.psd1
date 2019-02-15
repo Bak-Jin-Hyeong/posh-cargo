@@ -4,7 +4,7 @@
 ModuleToProcess = 'posh-cargo.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1.1'
+ModuleVersion = '0.1.2'
 
 # ID used to uniquely identify this module
 GUID = '1803191a-75c9-4000-b0aa-521ab6cd4ae9'
