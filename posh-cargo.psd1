@@ -19,7 +19,7 @@ Copyright = '(c) 2017 Bak, Jin Hyeong'
 Description = 'Provides tab autocompletion of cargo (https://github.com/rust-lang/cargo)'
 
 # Minimum version of the Windows PowerShell engine required by this module
-PowerShellVersion = '3.0'
+PowerShellVersion = '4.1.0'
 
 # Functions to export from this module
 FunctionsToExport = @(

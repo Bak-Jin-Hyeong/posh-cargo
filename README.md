@@ -6,7 +6,7 @@ Provides tab autocompletion of '[cargo](https://github.com/rust-lang/cargo)' com
 
 ### Prerequisites
 
-1. PowerShell 3.0 or higher. Check your PowerShell version by executing `$PSVersionTable.PSVersion`.
+1. PowerShell 4.1.0 or higher. Check your PowerShell version by executing `$PSVersionTable.PSVersion`.
 
 1. Script execution policy must be set to either `RemoteSigned` or `Unrestricted`.
    Check the script execution policy setting by executing `Get-ExecutionPolicy`.
